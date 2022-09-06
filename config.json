@@ -1,0 +1,13 @@
+{
+    "AppInfo":{
+        "port":3000,
+        "dbURL":"mongodb://localhost:27017/kalatag",
+        "staticDir": "views",
+        "secret": "mario",
+        "merchantId":""
+    },
+
+    "comment_1": "Bay Day",
+    "AuthMaxAge": 7,
+    "defaultRole": "user"
+}
