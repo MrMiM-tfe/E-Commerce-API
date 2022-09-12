@@ -11,10 +11,24 @@ mongoose.connect(config.AppInfo.dbURL).then((result) => {
     console.log(`Server is listening  on port ${config.AppInfo.port}`);
 })
 
+
 // some middlewares
 app.use(express.static(config.AppInfo.staticDir))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cookieParser())
+
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+    console.log(req.url)
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+});
+
+
 
 app.use(routes)
