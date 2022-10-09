@@ -72,3 +72,12 @@ exports.notLogin = (req, res, next) => {
         next()
     }
 }
+
+
+exports.isFirstUser = async (req, res, next) => {
+    const userCount = await User.countDocuments({})
+    if (userCount === 0) {
+        next()
+    }
+    res.json({"err" : "super user created beffor"})
+}
