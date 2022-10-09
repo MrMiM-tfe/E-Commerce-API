@@ -1,7 +1,7 @@
 {
     "AppInfo":{
         "port":3000,
-        "dbURL":"mongodb://localhost:27017/kalatag",
+        "dbURL":"mongodb://local-mongo:27017/kalatag",
         "staticDir": "views",
         "secret": "mario",
         "merchantId":""
